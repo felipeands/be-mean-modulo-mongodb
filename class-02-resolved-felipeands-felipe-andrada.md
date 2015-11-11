@@ -4,6 +4,7 @@ autor: FELIPE ANDRADA
 ## Listagem das databases (passo 2)
 felipea(mongod-3.0.6) be-mean-instagram> use be-mean-pokemons
 switched to db be-mean-pokemons
+
 felipea(mongod-3.0.6) be-mean-pokemons> show dbs
 be-mean-instagram → 0.078GB
 bemean            → 0.078GB
@@ -90,6 +91,17 @@ felipea(mongod-3.0.6) be-mean-pokemons> poke
 }
 
 ## Atualização do Pikachu (passo 6)
+felipea(mongod-3.0.6) be-mean-pokemons> poke.description = 'Pikachu we dont like you'
+Pikachu we dont like you
+
+felipea(mongod-3.0.6) be-mean-pokemons> db.pokemons.save(poke)
+Updated 1 existing record(s) in 10ms
+WriteResult({
+  "nMatched": 1,
+  "nUpserted": 0,
+  "nModified": 1
+})
+
 felipea(mongod-3.0.6) be-mean-pokemons> db.pokemons.find(query)
 {
   "_id": ObjectId("56436754dfeeaa75c58bd798"),
